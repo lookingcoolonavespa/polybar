@@ -12,5 +12,5 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
   
 polybar -r -q monitor1 -c "$DIR"/config.ini &
 polybar -r -q dummy1 -c "$DIR"/config.ini &
-polybar -r -q monitor2 -c "$DIR"/config.ini &
-polybar -r -q dummy2 -c "$DIR"/config.ini &
+polybar -r -q monitor2 -c "$DIR"/config.ini 2>/dev/null &
+polybar -r -q dummy2 -c "$DIR"/config.ini 2>/dev/null &
