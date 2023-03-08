@@ -2,7 +2,7 @@
 
 NOTIFY_ICON=/usr/share/icons/Papirus/32x32/apps/system-software-update.svg
 
-get_total_updates() { UPDATES=$(~/.config/polybar/colorblocks/scripts/checkupdates 2>/dev/null | wc -l); }
+get_total_updates() { UPDATES=$(/usr/lib/update-notifier/apt-check 2>&1| awk -F';' '{ sum=$1+$2; print sum }'); }
 
 while true; do
     get_total_updates
